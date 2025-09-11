@@ -1,0 +1,129 @@
+<!--                            TABLAS                                          -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tablas HTML - Explicación y Ejemplo</title>
+</head>
+<body>
+    <!-- 
+        LAS TABLAS EN HTML:
+        Las tablas se utilizan para organizar y presentar datos de forma estructurada en filas y columnas.
+        Aunque en el pasado se usaban para maquetación, hoy se recomienda usarlas solo para datos tabulares.
+    -->
+
+    <!-- 
+        ESTRUCTURA BÁSICA DE UNA TABLA:
+        <table> - Define la tabla
+        <tr> - Define una fila (table row)
+        <th> - Define una celda de encabezado (table header)
+        <td> - Define una celda de datos (table data)
+    -->
+
+    <!-- 
+        ELEMENTOS SEMÁNTICOS ADICIONALES (OPCIONALES):
+        <caption> - Añade un título o descripción a la tabla
+        <thead> - Agrupa el contenido de encabezado
+        <tbody> - Agrupa el contenido principal
+        <tfoot> - Agrupa el contenido de pie de tabla
+    -->
+
+    <!-- 
+        ATRIBUTOS IMPORTANTES:
+        border - Define el borde de la tabla (no recomendado, mejor usar CSS)
+        colspan - Permite que una celda ocupe varias columnas
+        rowspan - Permite que una celda ocupe varias filas
+    -->
+
+    <!-- 
+        BUENAS PRÁCTICAS:
+        1. Usar tablas solo para datos tabulares, no para diseño
+        2. Utilizar encabezados (<th>) para identificar columnas/filas
+        3. Agrupar semanticamente con thead, tbody y tfoot cuando sea necesario
+        4. Hacer las tablas accesibles con etiquetas como <caption> y scope
+    -->
+
+    <!-- EJEMPLO DE TABLA CON 4 COLUMNAS Y 10 FILAS -->
+    <table border="1">
+        <!-- 
+            FILA DE ENCABEZADO:
+            Las celdas <th> definen los encabezados de columna.
+            El atributo scope="col" indica que es encabezado para una columna (mejora accesibilidad).
+        -->
+        <tr>
+            <th scope="col">Letra</th>
+            <th scope="col">Fonética</th>
+            <th scope="col">Número</th>
+            <th scope="col">Tipo</th>
+        </tr>
+        
+        <!-- 
+            FILAS DE DATOS:
+            Cada <tr> representa una fila y cada <td> una celda de datos.
+            Se pueden mezclar <th> para encabezados de fila con scope="row".
+        -->
+        <tr>
+            <th scope="row">A</th>
+            <td>/eɪ/</td>
+            <td>1</td>
+            <td>Vocal</td>
+        </tr>
+        <tr>
+            <th scope="row">B</th>
+            <td>/biː/</td>
+            <td>2</td>
+            <td>Consonante</td>
+        </tr>
+        <tr>
+            <th scope="row">C</th>
+            <td>/siː/</td>
+            <td>3</td>
+            <td>Consonante</td>
+        </tr>
+        <tr>
+            <th scope="row">D</th>
+            <td>/diː/</td>
+            <td>4</td>
+            <td>Consonante</td>
+        </tr>
+        <tr>
+            <th scope="row">E</th>
+            <td>/iː/</td>
+            <td>5</td>
+            <td>Vocal</td>
+        </tr>
+        <tr>
+            <th scope="row">F</th>
+            <td>/ɛf/</td>
+            <td>6</td>
+            <td>Consonante</td>
+        </tr>
+        <tr>
+            <th scope="row">G</th>
+            <td>/dʒiː/</td>
+            <td>7</td>
+            <td>Consonante</td>
+        </tr>
+        <tr>
+            <th scope="row">H</th>
+            <td>/eɪtʃ/</td>
+            <td>8</td>
+            <td>Consonante</td>
+        </tr>
+        <tr>
+            <th scope="row">I</th>
+            <td>/aɪ/</td>
+            <td>9</td>
+            <td>Vocal</td>
+        </tr>
+    </table>
+
+    <!-- 
+        NOTAS ADICIONALES:
+        - Para tablas complejas, se pueden usar los atributos colspan y rowspan
+        - Ejemplo de colspan: <td colspan="2">Celda que ocupa 2 columnas</td>
+        - Ejemplo de rowspan: <td rowspan="2">Celda que ocupa 2 filas</td>
+        - Siempre es importante mantener la estructura correcta de filas y columnas
+    -->
+</body>
+</html>
