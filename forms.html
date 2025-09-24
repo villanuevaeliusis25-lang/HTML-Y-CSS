@@ -1,23 +1,149 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>FORMULARIOS</title>
+    <meta charset="UTF-8">
+    <title>📘 Apuntes de Formularios HTML</title>
 </head>
 <body>
-    <form> <!-- etiqueta <form> es para formularios -->
-        <input type="text"  > <!-- input = entrada de texto -->
-        <!-- type="text" es para texto -->
-        <input type="email" required > <!-- type="email" es para correos electronicos --> 
-        <!-- required es para que sea *obligatorio* rellenarlo -->
-        <input type="password" required name="contraseñas"> <!-- type="password" es para contraseñas --> 
-        <!-- name es para identificar el campo -->
-        <input type="number" placeholder="tu edad"> <!-- type="number" es para numeros -->
-        <!-- placeholder es un texto que aparece dentro del campo -->
-        <input type="submit" value="Enviar"> <!-- type="submit" es para boton de envio -->
-        <!-- value es el texto que aparece en el boton -->
-        <input type="checkbox"> <!-- type="checkbox" es para casillas de verificacion -->
-        <input type="radio"> <!-- type="radio" es para botones de opcion -->
-        <input type="date"> <!-- type="date" es para seleccionar fechas -->
+    <h1>📘 Apuntes de Formularios HTML</h1>
+
+    <h2>🎯 ¿Qué son los formularios?</h2>
+    <p>Los formularios HTML permiten recoger datos de los usuarios y enviarlos a un servidor.</p>
+
+    <h2>🏗️ Estructura Básica</h2>
+    <pre><code>&lt;form action="/procesar-datos" method="POST"&gt;
+    &lt;!-- Aquí van los campos --&gt;
+&lt;/form&gt;</code></pre>
+
+    <h3>Atributos principales:</h3>
+    <ul>
+        <li><strong>action</strong>: URL donde se envían los datos</li>
+        <li><strong>method</strong>: GET (visible en URL) o POST (oculto)</li>
+    </ul>
+
+    <h2>📝 Tipos de Campos de Input</h2>
+
+    <h3>Texto básico:</h3>
+    <pre><code>&lt;input type="text" name="nombre" placeholder="Tu nombre"&gt;</code></pre>
+    <input type="text" name="nombre" placeholder="Tu nombre">
+
+    <h3>Email con validación:</h3>
+    <pre><code>&lt;input type="email" name="email" required&gt;</code></pre>
+    <input type="email" name="email" required placeholder="tu@email.com">
+
+    <h3>Contraseña:</h3>
+    <pre><code>&lt;input type="password" name="clave"&gt;</code></pre>
+    <input type="password" name="clave" placeholder="Contraseña">
+
+    <h3>Número:</h3>
+    <pre><code>&lt;input type="number" name="edad" min="0" max="120"&gt;</code></pre>
+    <input type="number" name="edad" min="0" max="120">
+
+    <h3>Fecha:</h3>
+    <pre><code>&lt;input type="date" name="fecha_nacimiento"&gt;</code></pre>
+    <input type="date" name="fecha_nacimiento">
+
+    <h2>🔘 Checkboxes y Radio Buttons</h2>
+
+    <h3>Checkbox (múltiple selección):</h3>
+    <pre><code>&lt;label&gt;
+    &lt;input type="checkbox" name="lenguajes" value="html"&gt; HTML
+&lt;/label&gt;
+&lt;label&gt;
+    &lt;input type="checkbox" name="lenguajes" value="css"&gt; CSS
+&lt;/label&gt;</code></pre>
+    <label><input type="checkbox" name="lenguajes" value="html"> HTML</label>
+    <label><input type="checkbox" name="lenguajes" value="css"> CSS</label>
+
+    <h3>Radio Button (selección única):</h3>
+    <pre><code>&lt;label&gt;
+    &lt;input type="radio" name="genero" value="hombre"&gt; Hombre
+&lt;/label&gt;
+&lt;label&gt;
+    &lt;input type="radio" name="genero" value="mujer"&gt; Mujer
+&lt;/label&gt;</code></pre>
+    <label><input type="radio" name="genero" value="hombre"> Hombre</label>
+    <label><input type="radio" name="genero" value="mujer"> Mujer</label>
+
+    <h2>📋 Select y Textarea</h2>
+
+    <h3>Lista desplegable (Select):</h3>
+    <pre><code>&lt;label for="pais"&gt;País:&lt;/label&gt;
+&lt;select id="pais" name="pais"&gt;
+    &lt;option value="es"&gt;España&lt;/option&gt;
+    &lt;option value="mx"&gt;México&lt;/option&gt;
+    &lt;option value="ar"&gt;Argentina&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+    <label for="pais">País:</label>
+    <select id="pais" name="pais">
+        <option value="es">España</option>
+        <option value="mx">México</option>
+        <option value="ar">Argentina</option>
+    </select>
+
+    <h3>Área de texto larga (Textarea):</h3>
+    <pre><code>&lt;label for="mensaje"&gt;Mensaje:&lt;/label&gt;
+&lt;textarea id="mensaje" name="mensaje" rows="4" cols="50"&gt;&lt;/textarea&gt;</code></pre>
+    <label for="mensaje">Mensaje:</label><br>
+    <textarea id="mensaje" name="mensaje" rows="4" cols="50" placeholder="Escribe tu mensaje..."></textarea>
+
+    <h2>🛠️ Botones</h2>
+    <pre><code>&lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;button type="reset"&gt;Limpiar&lt;/button&gt;
+&lt;button type="button"&gt;Botón normal&lt;/button&gt;</code></pre>
+    <button type="submit">Enviar</button>
+    <button type="reset">Limpiar</button>
+    <button type="button">Botón normal</button>
+
+    <h2>✅ Atributos Importantes</h2>
+    <ul>
+        <li><strong>required</strong>: Campo obligatorio</li>
+        <li><strong>placeholder</strong>: Texto de ejemplo</li>
+        <li><strong>min/max</strong>: Valores mínimo y máximo (para números/fechas)</li>
+        <li><strong>minlength/maxlength</strong>: Longitud mínima/máxima del texto</li>
+        <li><strong>disabled</strong>: Desactiva el campo</li>
+    </ul>
+
+    <h2>🔥 Ejemplo Completo</h2>
+    <pre><code>&lt;form action="/registro" method="POST"&gt;
+    &lt;label for="nombre"&gt;Nombre completo:&lt;/label&gt;
+    &lt;input type="text" id="nombre" name="nombre" required&gt;
+
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+
+    &lt;label for="password"&gt;Contraseña:&lt;/label&gt;
+    &lt;input type="password" id="password" name="password" minlength="6"&gt;
+
+    &lt;button type="submit"&gt;Registrarse&lt;/button&gt;
+    &lt;button type="reset"&gt;Limpiar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+    <h3>Formulario funcionando:</h3>
+    <form onsubmit="alert('¡Formulario enviado! (solo demo)'); return false;">
+        <label for="demo-nombre">Nombre completo:</label><br>
+        <input type="text" id="demo-nombre" name="nombre" required><br><br>
+
+        <label for="demo-email">Email:</label><br>
+        <input type="email" id="demo-email" name="email" required><br><br>
+
+        <label for="demo-password">Contraseña:</label><br>
+        <input type="password" id="demo-password" name="password" minlength="6"><br><br>
+
+        <button type="submit">Registrarse</button>
+        <button type="reset">Limpiar</button>
     </form>
+
+    <h2>💡 Recordatorios Importantes</h2>
+    <ul>
+        <li>✅ Siempre usa el atributo <strong>name</strong> en los inputs</li>
+        <li>✅ Usa <strong>&lt;label&gt;</strong> para mejor accesibilidad</li>
+        <li>✅ El <strong>id</strong> del input debe coincidir con el <strong>for</strong> del label</li>
+        <li>✅ Prueba los formularios con <strong>required</strong> y validaciones</li>
+    </ul>
+
+    <script>
+        document.getElementById('fecha').textContent = new Date().toLocaleDateString('es-ES');
+    </script>
 </body>
 </html>

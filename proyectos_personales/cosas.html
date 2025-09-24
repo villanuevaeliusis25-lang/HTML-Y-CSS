@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📘 Apuntes de Formularios HTML</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            color: #667eea;
+            margin: 30px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        h3 {
+            color: #764ba2;
+            margin: 20px 0 10px 0;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+        
+        .note-box {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-family: 'Consolas', monospace;
+        }
+        
+        .tag {
+            color: #ff79c6;
+        }
+        
+        .attribute {
+            color: #50fa7b;
+        }
+        
+        .value {
+            color: #f1fa8c;
+        }
+        
+        .comment {
+            color: #6272a4;
+        }
+        
+        .example {
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px dashed #667eea;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+        }
+        
+        tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .form-preview {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .form-preview input, .form-preview select, .form-preview textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .form-preview button {
+            background: #667eea;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        
+        .form-preview button:hover {
+            background: #5a6fd8;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #f0f0f0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📘 Apuntes de Formularios HTML</h1>
+            <p><strong>Fecha:</strong> <span id="fecha"></span> | <strong>Por:</strong> Tu nombre aquí</p>
+        </header>
+
+        <section>
+            <h2><span class="emoji">🎯</span> ¿Qué son los formularios?</h2>
+            <p>Los formularios HTML permiten recoger datos de los usuarios y enviarlos a un servidor.</p>
+            
+            <div class="note-box">
+                <strong>💡 Recordatorio:</strong> Siempre usa el atributo <code>name</code> para identificar los campos en el servidor.
+            </div>
+        </section>
+
+        <section>
+            <h2><span class="emoji">🏗️</span> Estructura Básica</h2>
+            
+            <div class="code-block">
+<pre><span class="tag">&lt;form</span> <span class="attribute">action</span>=<span class="value">"/procesar-datos"</span> <span class="attribute">method</span>=<span class="value">"POST"</span><span class="tag">&gt;</span>
+    <span class="comment">&lt;!-- Aquí van los campos del formulario --&gt;</span>
+<span class="tag">&lt;/form&gt;</span></pre>
+            </div>
+            
+            <table>
+                <tr>
+                    <th>Atributo</th>
+                    <th>Función</th>
+                    <th>Valores comunes</th>
+                </tr>
+                <tr>
+                    <td><code>action</code></td>
+                    <td>URL donde se envían los datos</td>
+                    <td><code>/procesar", "contacto.php</code></td>
+                </tr>
+                <tr>
+                    <td><code>method</code></td>
+                    <td>Método de envío</td>
+                    <td><code>GET</code> (visible) o <code>POST</code> (oculto)</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2><span class="emoji">📝</span> Tipos de Campos</h2>
+            
+            <div class="code-block">
+<pre><span class="comment">&lt;!-- Campo de texto básico --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"nombre"</span> <span class="attribute">placeholder</span>=<span class="value">"Tu nombre"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Email con validación --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"email"</span> <span class="attribute">name</span>=<span class="value">"email"</span> <span class="attribute">required</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Contraseña --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"password"</span> <span class="attribute">name</span>=<span class="value">"clave"</span><span class="tag">&gt;</span></pre>
+            </div>
+
+            <div class="form-preview">
+                <h3>Vista previa:</h3>
+                <input type="text" name="nombre" placeholder="Tu nombre">
+                <input type="email" name="email" placeholder="tu@email.com" required>
+                <input type="password" name="clave" placeholder="Contraseña">
+            </div>
+        </section>
+
+        <section>
+            <h2><span class="emoji">🔘</span> Checkboxes y Radio Buttons</h2>
+            
+            <div class="code-block">
+<pre><span class="comment">&lt;!-- Checkbox (múltiple selección) --&gt;</span>
+<span class="tag">&lt;label&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"intereses"</span> <span class="attribute">value</span>=<span class="value">"html"</span><span class="tag">&gt;</span> HTML
+<span class="tag">&lt;/label&gt;</span>
+<span class="tag">&lt;label&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">"intereses"</span> <span class="attribute">value</span>=<span class="value">"css"</span><span class="tag">&gt;</span> CSS
+<span class="tag">&lt;/label&gt;</span>
+
+<span class="comment">&lt;!-- Radio button (selección única) --&gt;</span>
+<span class="tag">&lt;label&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"radio"</span> <span class="attribute">name</span>=<span class="value">"genero"</span> <span class="attribute">value</span>=<span class="value">"hombre"</span><span class="tag">&gt;</span> Hombre
+<span class="tag">&lt;/label&gt;</span>
+<span class="tag">&lt;label&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"radio"</span> <span class="attribute">name</span>=<span class="value">"genero"</span> <span class="attribute">value</span>=<span class="value">"mujer"</span><span class="tag">&gt;</span> Mujer
+<span class="tag">&lt;/label&gt;</span></pre>
+            </div>
+        </section>
+
+        <section>
+            <h2><span class="emoji">📋</span> Select y Textarea</h2>
+            
+            <div class="code-block">
+<pre><span class="comment">&lt;!-- Lista desplegable --&gt;</span>
+<span class="tag">&lt;label</span> <span class="attribute">for</span>=<span class="value">"pais"</span><span class="tag">&gt;</span>País:<span class="tag">&lt;/label&gt;</span>
+<span class="tag">&lt;select</span> <span class="attribute">id</span>=<span class="value">"pais"</span> <span class="attribute">name</span>=<span class="value">"pais"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;option</span> <span class="attribute">value</span>=<span class="value">"es"</span><span class="tag">&gt;</span>España<span class="tag">&lt;/option&gt;</span>
+    <span class="tag">&lt;option</span> <span class="attribute">value</span>=<span class="value">"mx"</span><span class="tag">&gt;</span>México<span class="tag">&lt;/option&gt;</span>
+    <span class="tag">&lt;option</span> <span class="attribute">value</span>=<span class="value">"ar"</span><span class="tag">&gt;</span>Argentina<span class="tag">&lt;/option&gt;</span>
+<span class="tag">&lt;/select&gt;</span>
+
+<span class="comment">&lt;!-- Área de texto --&gt;</span>
+<span class="tag">&lt;label</span> <span class="attribute">for</span>=<span class="value">"mensaje"</span><span class="tag">&gt;</span>Mensaje:<span class="tag">&lt;/label&gt;</span>
+<span class="tag">&lt;textarea</span> <span class="attribute">id</span>=<span class="value">"mensaje"</span> <span class="attribute">name</span>=<span class="value">"mensaje"</span> <span class="attribute">rows</span>=<span class="value">"4"</span> <span class="attribute">placeholder</span>=<span class="value">"Escribe tu mensaje..."</span><span class="tag">&gt;</span><span class="tag">&lt;/textarea&gt;</span></pre>
+            </div>
+        </section>
+
+        <section>
+            <h2><span class="emoji">🛠️</span> Ejemplo Completo</h2>
+            
+            <div class="code-block">
+<pre><span class="tag">&lt;form</span> <span class="attribute">action</span>=<span class="value">"/registro"</span> <span class="attribute">method</span>=<span class="value">"POST"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;label</span> <span class="attribute">for</span>=<span class="value">"email"</span><span class="tag">&gt;</span>Email:<span class="tag">&lt;/label&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"email"</span> <span class="attribute">id</span>=<span class="value">"email"</span> <span class="attribute">name</span>=<span class="value">"email"</span> <span class="attribute">required</span><span class="tag">&gt;</span>
+
+    <span class="tag">&lt;label</span> <span class="attribute">for</span>=<span class="value">"password"</span><span class="tag">&gt;</span>Contraseña:<span class="tag">&lt;/label&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"password"</span> <span class="attribute">id</span>=<span class="value">"password"</span> <span class="attribute">name</span>=<span class="value">"password"</span> <span class="attribute">minlength</span>=<span class="value">"6"</span><span class="tag">&gt;</span>
+
+    <span class="tag">&lt;button</span> <span class="attribute">type</span>=<span class="value">"submit"</span><span class="tag">&gt;</span>Registrarse<span class="tag">&lt;/button&gt;</span>
+    <span class="tag">&lt;button</span> <span class="attribute">type</span>=<span class="value">"reset"</span><span class="tag">&gt;</span>Limpiar<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/form&gt;</span></pre>
+            </div>
+
+            <div class="form-preview">
+                <h3>Formulario de ejemplo:</h3>
+                <form onsubmit="alert('¡Formulario enviado! (solo es una demo)'); return false;">
+                    <label for="demo-email">Email:</label>
+                    <input type="email" id="demo-email" name="email" required placeholder="tu@email.com">
+                    
+                    <label for="demo-password">Contraseña:</label>
+                    <input type="password" id="demo-password" name="password" minlength="6" placeholder="Mínimo 6 caracteres">
+                    
+                    <button type="submit">Registrarse</button>
+                    <button type="reset">Limpiar</button>
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            <p>📚 <strong>Tips para recordar:</strong> Siempre usa <code>&lt;label&gt;</code> para accesibilidad, <code>required</code> para campos obligatorios, y <code>name</code> para identificar los datos.</p>
+            <p>¡Sigue practicando! 💪</p>
+        </footer>
+    </div>
+
+    <script>
+        // Agregar fecha actual automáticamente
+        document.getElementById('fecha').textContent = new Date().toLocaleDateString('es-ES', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    </script>
+</body>
+</html>
