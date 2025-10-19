@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Villanueva Acahta Eliu Mario" content="Practica de Elementos HTML">
+    <title>Práctica de Elementos HTML</title>
+</head>
+<body>
+    <h1>Práctica de Elementos HTML</h1>
+    
+    <!-- Ejercicio 1: Títulos, negritas y listas desordenadas -->
+    <section>
+        <h2> Pasatiempos</h2>
+        <p>Estos son algunos <strong>pasatiempos</strong>:</p>
+        <ul>
+            <li><strong>Leer</strong> libros de ciencia ficción</li>
+            <li><strong>Escuchar</strong> música clásica</li>
+            <li><strong>Cocinar</strong> platos internacionales</li>
+            <li><strong>Practicar</strong> senderismo los fines de semana</li>
+        </ul>
+    </section>
+    
+    <!-- Ejercicio 2: Listas ordenadas, desordenadas y multinivel -->
+    <section>
+        <h2>Receta de Pasta Carbonara</h2>
+        <ol>
+            <li>Ingredientes:
+                <ul>
+                    <li>400g de espaguetis</li>
+                    <li>200g de pancetta o bacon</li>
+                    <li>4 huevos</li>
+                    <li>100g de queso pecorino rallado</li>
+                    <li>Pimienta negra</li>
+                    <li>Sal</li>
+                </ul>
+            </li>
+            <li>Preparación:
+                <ol>
+                    <li>Cocer la pasta en agua con sal</li>
+                    <li>Mientras tanto, dorar la pancetta en una sartén</li>
+                    <li>Batir los huevos con el queso y la pimienta</li>
+                    <li>Escurrir la pasta y mezclar con la pancetta</li>
+                    <li>Fuera del fuego, añadir la mezcla de huevo y remover rápidamente</li>
+                </ol>
+            </li>
+            <li>Consejos:
+                <ul>
+                    <li>Servir inmediatamente</li>
+                    <li>Añadir más queso al gusto</li>
+                </ul>
+            </li>
+        </ol>
+    </section>
+    
+    <!-- Ejercicio 3: Imagen con atributos -->
+    <section>
+        <h2>Paisajes </h2>
+        <p>Aquí hay una imagen de un paisaje :</p>
+        <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80" 
+            Palt="Paisaje natural con montañas y lago" 
+            Pwidth="600" 
+            height="400">
+    </section>
+    
+    <!-- Ejercicio 4: Tabla 3x3 -->
+    <section>
+        <h2>Productos en Venta</h2>
+        <table >
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Disponibilidad</th>
+            </tr>
+            <tr>
+                <td>Laptop</td>
+                <td>$850</td>
+                <td>En stock</td>
+            </tr>
+            <tr>
+                <td>Tablet</td>
+                <td>$350</td>
+                <td>Agotado</td>
+            </tr>
+            <tr>
+                <td>Smartphone</td>
+                <td>$600</td>
+                <td>En stock</td>
+            </tr>
+        </table>
+    </section>
+    
+    <!-- Ejercicio 5: Formulario con campos de texto, email y botón -->
+    <section>
+        <h2>Formulario de Contacto</h2>
+        <form>
+            <p>
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre">
+            </p>
+            <p>
+                <label for="email">Correo electrónico:</label><br>
+                <input type="email" id="email" name="email">
+            </p>
+            <p>
+                <label for="mensaje">Mensaje:</label><br>
+                <textarea id="mensaje" name="mensaje" rows="4" cols="50"></textarea>
+            </p>
+            <p>
+                <input type="submit" value="Enviar">
+            </p>
+        </form>
+    </section>
+    
+    <!-- Ejercicio 6: Formulario con campos de selección y botones de radio -->
+    <section>
+        <h2>Formulario de Registro</h2>
+        <form>
+            <fieldset>
+                <legend>Información personal</legend>
+                
+                <p>Género:</p>
+                <input type="radio" id="masculino" name="genero" value="masculino">
+                <label for="masculino">Masculino</label><br>
+                
+                <input type="radio" id="femenino" name="genero" value="femenino">
+                <label for="femenino">Femenino</label><br>
+                
+                <input type="radio" id="otro" name="genero" value="otro">
+                <label for="otro">Otro</label>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Preferencias</legend>
+                
+                <p>Selecciona tu país:</p>
+                <select id="pais" name="pais">
+                    <option value="es">España</option>
+                    <option value="mx">México</option>
+                    <option value="ar">Argentina</option>
+                    <option value="co">Colombia</option>
+                    <option value="pe">Perú</option>
+                </select>
+                
+                <p>Selecciona tus intereses:</p>
+                <input type="checkbox" id="tecnologia" name="intereses" value="tecnologia">
+                <label for="tecnologia">Tecnología</label><br>
+                
+                <input type="checkbox" id="deportes" name="intereses" value="deportes">
+                <label for="deportes">Deportes</label><br>
+                
+                <input type="checkbox" id="musica" name="intereses" value="musica">
+                <label for="musica">Música</label><br>
+                
+                <input type="checkbox" id="viajes" name="intereses" value="viajes">
+                <label for="viajes">Viajes</label>
+            </fieldset>
+            
+            <p>
+                <input type="submit" value="Registrarse">
+            </p>
+        </form>
+    </section>
+</body>
+</html>
