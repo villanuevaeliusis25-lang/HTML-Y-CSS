@@ -1,0 +1,16 @@
+.mi-caja{
+width: 300px; 
+padding: 20px;
+border-top-style: solid;
+border-top-width: 5px;
+border-top-color: blue;
+border-right-style: dashed;
+border-right-width: 3px;
+border-right-color: green;
+border-bottom-style: dotted;
+border-bottom-width: 7px;
+border-bottom-color: red;
+border-left-style: double;
+border-left-width: 4px;
+border-left-color: purple;
+}
